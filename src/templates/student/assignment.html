@@ -45,10 +45,11 @@
     </ol>
 </nav>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row justify-content-center">
 
-        <div class="col-md-6 col-lg-8 col-xl-9">
-            <table class="table table-hover">
+        <div class="col-lg-6 col-xl-5">
+	<div class="card" style="overflow: hidden;">
+            <table class="table table-hover mb-0">
                 <thead>
                 <tr>
                     <th scope="col">Timestamp</th>
@@ -68,16 +69,17 @@
                 {% endfor %}
                 {% if not runs %}
                     <tr>
-                        <td colspan="2">No previous runs</td>
+                        <td class="text-muted" colspan="2">No previous runs</td>
                     </tr>
                 {% endif %}
                 </tbody>
             </table>
-            <div class="text-secondary"> All times in {{ tzname }}</div>
+	</div>
+            <div class="text-secondary mb-2"> All times in {{ tzname }}</div>
         </div>
 
 
-        <div class="col-md-6 col-lg-4 col-xl-3">
+        <div class="col-lg-6 col-xl-3">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Available Runs: {{ num_available_runs }}/{{ assignment.max_runs }} ({{ assignment.quota }})</h5>
